@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+    <%- include ('../../public/menu/menuAdmin.html')%>
+    
+    <header><h3>Cadastre a produto:</h3></header>
+
+    <% if (erros) { %>
+        <ul>
+            <% for (let i = 0; i < erros.length;i++){ %>
+                <li><%= erros[i].msg %></li>
+            <% } %>
+        </ul>
+        
+    <% } %>
+
+    <form action="/produto/cadastrar" method="post">
+        <label>descricao</label>
+        <br>
+        <input type="text"  name="descricao" id="descricao" >
+        <br>      
+        <label>preco</label>
+        <br>
+        <input type="text" name="preco" id="preco" >
+        <br><br>   
+        <input type="submit" value="cadastrar">
+        </div>
+    </form>
+</body>
+</html>

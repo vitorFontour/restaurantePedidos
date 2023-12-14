@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+    <%- include ('../../public/menu/menuAdmin.html')%>
+    <table>
+       
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+        <% for (let i=0; i < usuario.length; i++){ %>
+            <tr>
+                <td>
+                    <%= usuario[i].nome %>
+                </td>
+                <td>
+                    <%= usuario[i].email %>
+                </td>
+
+                <td>
+                   <a href="/admin/editar_usuario/<%= usuario[i].id%>">editar</a>
+                   <a href="/admin/excluir/<%= usuario[i].id%>">excluir</a>
+                </td>
+
+            </tr>
+            <% } %>
+    </table>
+
+</body>
+
+</html>

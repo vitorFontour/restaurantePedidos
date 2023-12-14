@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <%- include ('../../public/menu/menuAdmin.html')%>
+    
+    <form action="/admin/salvar_produto/<%= produto[0].id%>" method="post">
+
+        <label>descricao</label> 
+        <br>       
+        <input type="text" name="descricao" id="descricao" value="<%= produto[0].descricao %>" >
+        <br>
+        <label>preco</label>      
+        <br>
+        <input type="text" name="preco" id="preco" value="<%= produto[0].preco %>">
+       
+        
+        <br><br>
+        <input type="submit" value="salvar">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include ('../../public/menu/menuAdmin.html')%>
+    <header><h2>Cadastro usuario</h2></header>
+    
+    <% if (erros) { %>
+        <ul>
+            <% for (let i = 0; i < erros.length;i++){ %>
+                <li><%= erros[i].msg %></li>
+            <% } %>
+        </ul>        
+    <% } %>
+
+    <form action="/admin/cadastrar" method="post">
+      
+            <label>nome</label>
+            <br>
+            <input type="text"  name="nome" id="nome" value="<%= usuario.nome %>">
+            <br>      
+            <label>email</label>
+            <br>
+            <input type="text" name="email" id="email" value="<%= usuario.email %>">
+            <br>      
+            <label>senha</label>
+            <br>
+            <input type="password" name="senha" id="senha" value="<%= usuario.senha %>">
+            <br><br>   
+            
+            <select name="id_tipo_usuario">                         
+                <% for(let i = 0; i < tipos.length; i++) { %>
+                  <option value="<%= tipos[i].id %>"><%= tipos[i].descricao %></option>                  
+                <% } %>
+              </select>
+            <br>       
+            <br>
+            <input type="submit" value="adm cadastro usuario" >
+     
+    </form>
+</body>
+</html>

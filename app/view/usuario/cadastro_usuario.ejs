@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <li><a href="/logout">logout</a></li>
+    
+    <header><h2>Cadastre seu usuario</h2></header>
+    
+    <% if (erros) { %>
+        <ul>
+            <% for (let i = 0; i < erros.length;i++){ %>
+                <li><%= erros[i].msg %></li>
+            <% } %>
+        </ul>        
+    <% } %>
+
+    <form action="/usuario/cadastrar" method="post">
+      
+            <label>nome</label>
+            <br>
+            <input type="text"  name="nome" id="nome" value="<%= usuario.nome %>">
+            <br>      
+            <label>email</label>
+            <br>
+            <input type="text" name="email" id="email" value="<%= usuario.email %>">
+            <br>      
+            <label>senha</label>
+            <br>
+            <input type="password" name="senha" id="senha" value="<%= usuario.senha %>">
+            <br>      
+            <label>confirmar senha</label>
+            <br>
+            <input type="password" name="confirmar_senha" id="confirmar_senha" value="<%= usuario.confirmar_senha %>">
+            <br>       
+            <br>
+            <input type="submit" value="cadastro usuario" >
+     
+    </form>
+    
+</body>
+</html>
